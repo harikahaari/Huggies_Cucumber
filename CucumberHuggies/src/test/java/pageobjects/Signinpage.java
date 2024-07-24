@@ -18,6 +18,7 @@ public class Signinpage extends BaseObjects {
 
 @FindBy(xpath="//button[@id='consumer-signin-button']") WebElement sIGNIN; //button[@id='consumer-signin-button']
 @FindBy(xpath="//a[@class='nav-link user-logged-in']") WebElement signinsuccess;
+@FindBy(xpath="//div[@class='error-msg-text-wrap']")   WebElement yourAccountIsLockedmessage;
 
 public void setsigninemail(String email){
 	Email.sendKeys(email);
@@ -52,6 +53,15 @@ public boolean successsignin()   // MyAccount Page heading display status
 		return (false);
 	}
 
+}
+public boolean Accountlockmessage(){
+	if(yourAccountIsLockedmessage.getText().equalsIgnoreCase("Your account is locked. Please reset your password to unlock it.")){
+		return true;
+	}
+	else
+	{
+		return false;
+	}
 }
 
 }

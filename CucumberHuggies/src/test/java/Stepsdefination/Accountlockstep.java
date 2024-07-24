@@ -3,6 +3,7 @@ package Stepsdefination;
 import java.io.IOException;
 import java.util.Properties;
 
+import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 
 import factory.BaseClass;
@@ -51,7 +52,7 @@ public class Accountlockstep {
 
 	@Then("verify the account lock message")
 	public void verify_the_account_lock_message() {
-	    
+	    Assert.assertTrue(sn.Accountlockmessage());
 	}
 
 
